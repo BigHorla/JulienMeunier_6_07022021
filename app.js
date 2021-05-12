@@ -1,16 +1,17 @@
+require('dotenv').config()
+
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 
 //------------------------------
-const userName = 'Juju'
-const mdp = 'Iu0DOFbyzYss5SjL';
+const host = process.env.DB_HOST;
+const username = process.env.DB_USER;
+const password = process.env.DB_PASS;
 //------------------------------
 
-
-
 //Connection a MongoDB
-mongoose.connect('mongodb+srv://'+userName+':'+mdp+'@mabdd.wyv27.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://'+username+':'+password+'@'+host,
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
@@ -23,12 +24,14 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use(express.json());
+
 //Routes
 //___________________________________________________Sauces
-const sauceRoutes = require('./routes/sauce_Routes')
+const sauceRoutes = require('./routes/sauceRoutes')
 app.use('/api/sauces', sauceRoutes);
 //___________________________________________________User
-const userRoutes = require('./routes/user_Routes')
+const userRoutes = require('./routes/userRoutes')
 app.use('/api/auth', userRoutes);
 //Exports
 module.exports = app;

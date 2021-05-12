@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const saucesCtrl = require('../controllers/sauces_Ctrl');
+const saucesCtrl = require('../controllers/saucesCtrl');
 const auth = require('../middleware/auth');
 
 //Ajouter une sauce :
