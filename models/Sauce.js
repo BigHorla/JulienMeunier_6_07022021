@@ -8,10 +8,10 @@ const sauceSchema = mongoose.Schema({
     mainPepper : { type: String, required: true},//Ingrédient principale
     imageUrl : { type: String, required: true},//Url vers l'image de la sauce
     heat : { type: Number, required: true},//Nombre entre 1 et 10 décrivant la sauce
-    likes : { type: Number, required: true},//Nombre d'utilisateurs aimant la sauce
-    dislikes : { type: Number, required: true},//Nombre d'utilisateurs n'aimant pas la sauce
-    usersLiked : { type: Array, required: true},//Tableau d'identifiants d'utilisateurs ayant aimé la sauce
-    usersDisliked : { type: Array, required: true},//Tableau d'identifiants d'utilisateurs n'ayant pas aimé la sauce
+    likes : { type: Number },//Nombre d'utilisateurs aimant la sauce
+    dislikes : { type: Number },//Nombre d'utilisateurs n'aimant pas la sauce
+    usersLiked : { type: Array },//Tableau d'identifiants d'utilisateurs ayant aimé la sauce
+    usersDisliked : { type: Array },//Tableau d'identifiants d'utilisateurs n'ayant pas aimé la sauce
 })
 
 //Export en model mongoose -> (nom, schema)

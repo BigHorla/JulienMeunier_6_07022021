@@ -7,5 +7,4 @@ router.post('/signup', userCtrl.signup);
 //Se connecter
 router.post('/login', userCtrl.login);
 
-
 module.exports = router;

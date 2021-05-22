@@ -1,3 +1,6 @@
+//middleware de sécurité
+//Vérifie l'authentification de l'utilisateur à chaque requête
+
 const jwt = require('jsonwebtoken');
 
 module.exports = (req, res, next) => {
