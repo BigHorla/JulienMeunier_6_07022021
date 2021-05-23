@@ -3,8 +3,9 @@ const uniqueValidator = require('mongoose-unique-validator');
 const bcrypt = require('bcrypt');
 const regex = new RegExp(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,120})$/);
 const SALT_WORK_FACTOR = 10;
+
 /* 
-Validation du mot de pass
+Validation du mot de passe
 Règles:
 - entre 8 et 120 signes
 - pas d'espace

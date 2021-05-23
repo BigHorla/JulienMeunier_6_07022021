@@ -16,9 +16,9 @@ const storage = multer.diskStorage({
         callback(null, 'img')
     },
     filename: (req, file, callback) => {
-        //Etape 1 -> enlever les espaces dans le nom de fichier et l'enxtension
+        //Enlever les espaces dans le nom de fichier et l'enxtension
         const name = file.originalname.split(' ').join('_').split('.')[0];
-        //Etape 2 -> ajouter l'exentension à partir du MIME_TYPE renvoyé par le front
+        //Ajouter l'exentension à partir du MIME_TYPE renvoyé par le front
         const extension = MIME_TYPE[file.mimetype];
         //Etape 3 -> le callback
         callback(null, name + Date.now() + '.' + extension)

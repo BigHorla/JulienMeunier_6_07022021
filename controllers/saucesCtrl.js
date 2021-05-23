@@ -6,7 +6,6 @@ exports.addSauce = (req, res, next) => {
     const sauceObject = JSON.parse(req.body.sauce);
     const sauce = new Sauce({
         ...sauceObject,
-        // TODO : Supression de l'extension du fichier d'origine
         imageUrl: req.protocol+'://'+req.get('host')+'/img/'+req.file.filename
     })
     sauce.save()
@@ -28,7 +27,7 @@ exports.getOneSauce = (req, res, next) => {
 //Mettre à jour une sauce
 exports.modifySauce = (req, res, next) => {
   let sauceObject;
-  
+
   if(req.file) {//Il y a t-il une nouvelle image ?
     sauceObject = {...JSON.parse(req.body.sauce), imageUrl: req.protocol+"://"+req.get('host')+"/img/"+req.file.filename};
     Sauce.findOne({ _id: req.params.id })
