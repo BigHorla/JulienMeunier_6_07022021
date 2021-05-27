@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
+
 const bcrypt = require('bcrypt');
 const regex = new RegExp(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,120})$/);
 const SALT_WORK_FACTOR = 10;
+
+
 
 /* 
 Validation du mot de passe
@@ -24,6 +27,8 @@ userSchema.plugin(uniqueValidator);
 
 userSchema.pre('save', function(next) {
   const user = this;
+
+  
 
   // only hash the password if it has been modified (or is new)
   if (!user.isModified('password')) return next();
