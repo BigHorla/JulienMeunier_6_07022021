@@ -1,11 +1,14 @@
 const bcrypt = require('bcrypt');//Module de Hashage
 const jwt = require('jsonwebtoken');//Module de gestion de token
 const User = require('../models/User');
+const {Base64} = require('js-base64');
+
+
 
 //S'inscrire
 exports.signup = (req, res, next) => {
   //Un nouvel utilisateur est créé
-  const user = new User( { email: req.body.email, password: req.body.password } );
+  const user = new User( { email: Base64.encode(req.body.email), password: req.body.password } );
   user.save()//L'utilisateur est sauvegarder dans la MongoDB
     .then(() => res.status(201).json({ message: "Utilisateur créé !" }))
     .catch((error) => res.status(400).json({ error }));
@@ -14,7 +17,7 @@ exports.signup = (req, res, next) => {
 
 //Se connecter
 exports.login = (req, res, next) => {
-    User.findOne({ email: req.body.email })//L'utilisateur est chercher dans la MongoDB via son email (unique)
+    User.findOne({ email: Base64.encode(req.body.email) })//L'utilisateur est chercher dans la MongoDB via son email (unique)
       .then(user => {
         if (!user) {
           return res.status(401).json({ error: 'Utilisateur non trouvé !' });
