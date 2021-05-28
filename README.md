@@ -1,6 +1,6 @@
 # API So Peckocko
 
-API So Peckocko : platforme de partage et de notation de sauce 
+API So Peckocko : platforme de partage et de notation de sauces 
 
 ### Pré-requis
 
@@ -12,14 +12,16 @@ Pour intéragir avec l'api, il faudra lancer le front.
 
 ### Installation
 
--Lancer la commande ``npm install`` afin d'installer les dépendences
--Editer le fichier ``'template.env'`` avec les infos demandées
--Renommer le fichier en ``'.env'``
+- Lancer la commande ``npm install`` afin d'installer les dépendences
+
+- Editer le fichier ``'template.env'`` avec les infos demandées
+
+- Renommer le fichier en ``'.env'``
 
 ## Démarrage
 
--Lancer la commande ``node server`` ou ``nodemon server`` selon vos besoins
--Une fois sur la partie front se créer un compte :
+- Lancer la commande ``node server`` ou ``nodemon server`` selon vos besoins
+- Une fois sur la partie front se créer un compte :
 
         Validation du mot de passe
         - entre 8 et 120 signes
@@ -28,11 +30,12 @@ Pour intéragir avec l'api, il faudra lancer le front.
         - au minimum une lettre majuscule
         - au minimum un chiffre
         - au minimum un des symboles suivant $ @ % * + - _ ! 
+        
 
 
 ## Auteur
 
-* **Julien Meunier** _alias_ [@BigHorla](https://github.com/BigHorla)
+* **Julien Andre Meunier** _alias_ [@BigHorla](https://github.com/BigHorla)
 
 
 
