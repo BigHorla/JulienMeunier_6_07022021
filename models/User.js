@@ -5,8 +5,6 @@ const bcrypt = require('bcrypt');
 const regex = new RegExp(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,120})$/);
 const SALT_WORK_FACTOR = 10;
 
-
-
 /* 
 Validation du mot de passe
 Règles:
@@ -28,19 +26,17 @@ userSchema.plugin(uniqueValidator);
 userSchema.pre('save', function(next) {
   const user = this;
 
-  
-
-  // only hash the password if it has been modified (or is new)
+  // S'il est nouveau ou modifié : le mdp est hashé et salé
   if (!user.isModified('password')) return next();
 
-  // generate a salt
+  // Préparation du salage
   bcrypt.genSalt(SALT_WORK_FACTOR, (err, salt) => {
       if (err) return next(err);
 
-      // hash the password using our new salt
+      // Hashage avec le salage
       bcrypt.hash(user.password, salt, (err, hash) => {
           if (err) return next(err);
-          // override the cleartext password with the hashed one
+          // Remplacement du mdp en claire par celui hashé
           user.password = hash;
           next();
       });

@@ -6,7 +6,7 @@ const username = process.env.DB_USER;
 const password = process.env.DB_PASS;
 
 //-----------------------------------------------------
-//API de base :
+//API conf :
 const mongoose = require('mongoose');
 mongoose.set('useCreateIndex', true);
 const express = require('express');
@@ -62,11 +62,11 @@ app.use((req, res, next) => {
 
 //-----------------------------------------------------
 //Middleware utilitaires
-app.use(helmet())
+app.use(helmet());//Masque l'utilisation d'express
 app.use(express.json());//Pour parser les requètes
-app.use(mongoSanitize());
-app.use(limiter);
-app.use('/img', express.static(path.join(__dirname, 'img')));
+app.use(mongoSanitize());//Clean les données pour empécher certains types d'injections
+app.use(limiter);//Limite le nbr de requètes
+app.use('/img', express.static(path.join(__dirname, 'img')));//chemin vers les images
 
 //-----------------------------------------------------
 //Sauces ROUTES

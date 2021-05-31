@@ -72,7 +72,7 @@ exports.likeSauce = (req, res, next) => {
             Sauce.updateOne(
               { _id: req.params.id },
               {
-                $inc: { likes: -1 },//On retrire le like
+                $inc: { likes: -1 },//On retire le like
                 $pull: { usersLiked: req.body.userId },//On retire l'utilisateur de la liste
                 _id: req.params.id,
               }

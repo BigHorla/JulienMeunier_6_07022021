@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');//Module de Hashage
 const jwt = require('jsonwebtoken');//Module de gestion de token
-const User = require('../models/User');
-const {Base64} = require('js-base64');
+const User = require('../models/User');//Le modele
+const {Base64} = require('js-base64');//Pour encrypter en B64
 
 
 
