@@ -20,10 +20,10 @@ Pour intéragir avec l'api, il faudra lancer le front.
 
 Il est également possible de tester l'application avec les infos suivantes :
 
-DB_HOST='mabdd.wyv27.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
-DB_USER='user'
-DB_PASS='xmblj208CDOiytoL'
-TOKEN='6qCTHo40zthEL3rT7te0'
+        DB_HOST='mabdd.wyv27.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+        DB_USER='user'
+        DB_PASS='xmblj208CDOiytoL'
+        TOKEN='6qCTHo40zthEL3rT7te0'
 
 ## Démarrage
 
