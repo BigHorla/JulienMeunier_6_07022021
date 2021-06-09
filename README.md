@@ -14,9 +14,16 @@ Pour intéragir avec l'api, il faudra lancer le front.
 
 - Lancer la commande ``npm install`` afin d'installer les dépendences
 
-- Editer le fichier ``'template.env'`` avec les infos demandées
+- Editer le fichier ``'template.env'`` avec les infos demandées à l'intérieur
 
 - Renommer le fichier en ``'.env'``
+
+Il est également possible de tester l'application avec les infos suivantes :
+
+DB_HOST='mabdd.wyv27.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+DB_USER='user'
+DB_PASS='xmblj208CDOiytoL'
+TOKEN='6qCTHo40zthEL3rT7te0'
 
 ## Démarrage
 
