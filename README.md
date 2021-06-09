@@ -18,12 +18,9 @@ Pour intéragir avec l'api, il faudra lancer le front.
 
 - Renommer le fichier en ``'.env'``
 
-Il est également possible de tester l'application avec les infos suivantes :
+Si vous n'avez pas de compte MongoDB vous pouvez me contactez pour tester l'app :
 
-        DB_HOST='mabdd.wyv27.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
-        DB_USER='user'
-        DB_PASS='xmblj208CDOiytoL'
-        TOKEN='6qCTHo40zthEL3rT7te0'
+julien.meunier@fluxuphage.com
 
 ## Démarrage
 
